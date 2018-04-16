@@ -2,17 +2,19 @@ package semaphore;
 
 import java.util.concurrent.Semaphore;
 
-public class IncThread implements Runnable {
+//Поток исполнения, уменьшающй значение счетчика на единицу
+public class DecThread implements Runnable{
 
     private String name;
     private Semaphore sem;
 
-    public IncThread(Semaphore sem, String name) {
+    public DecThread(Semaphore sem, String name) {
 
         this.name = name;
         this.sem = sem;
 
         new Thread(this).start();
+
     }
 
     @Override
@@ -28,7 +30,7 @@ public class IncThread implements Runnable {
             System.out.println("Поток " + name + " полуает разрешение");
             // а теперь получить доступ к общему ресурсу
             for (int i = 0; i < 5; i++) {
-                Shared.count++;
+                Shared.count--;
                 System.out.println(name + " : " + Shared.count);
             }
 
@@ -41,5 +43,6 @@ public class IncThread implements Runnable {
         //освободить разрешение
         System.out.println("Поток " + name + " освобождает разрешение");
         sem.release();
+
     }
 }
