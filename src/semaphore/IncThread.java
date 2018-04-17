@@ -21,18 +21,18 @@ public class IncThread implements Runnable {
         System.out.println("Запуск потока " + name);
 
         try {
-            // сначала получить разрешение
-            System.out.println("Поток " + name + " ождает разрешения");
+            //сначала получить разрешение
+            System.out.println("Поток " + name + " ождает разрешение");
             sem.acquire();
 
-            System.out.println("Поток " + name + " полуает разрешение");
-            // а теперь получить доступ к общему ресурсу
+            System.out.println("Поток " + name + " получает разрешение");
+            //а теперь получить доступ к общему ресурсу
             for (int i = 0; i < 5; i++) {
                 Shared.count++;
                 System.out.println(name + " : " + Shared.count);
             }
 
-            //разрешить , если возможо, переклчение контекста
+            //разрешить, если возможо, переклчение контекста
             Thread.sleep(10);
         } catch (InterruptedException exc) {
             System.out.println(exc.toString());
