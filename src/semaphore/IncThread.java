@@ -32,7 +32,7 @@ public class IncThread implements Runnable {
                 System.out.println(name + " : " + Shared.count);
             }
 
-            //разрешить, если возможо, переклчение контекста
+            //разрешить, если возможо, переключение контекста
             Thread.sleep(10);
         } catch (InterruptedException exc) {
             System.out.println(exc.toString());

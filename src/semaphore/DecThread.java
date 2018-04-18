@@ -2,7 +2,7 @@ package semaphore;
 
 import java.util.concurrent.Semaphore;
 
-//Поток исполнения, уменьшающй значение счетчика на единицу
+//Поток исполнения, уменьшающий значение счетчика на единицу
 public class DecThread implements Runnable{
 
     private String name;
@@ -34,7 +34,7 @@ public class DecThread implements Runnable{
                 System.out.println(name + " : " + Shared.count);
             }
 
-            //разрешить, если возможо, переклчение контекста
+            //разрешить, если возможо, переключение контекста
             Thread.sleep(10);
         } catch (InterruptedException exc) {
             System.out.println(exc.toString());
