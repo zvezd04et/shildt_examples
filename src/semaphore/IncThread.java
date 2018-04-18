@@ -22,7 +22,7 @@ public class IncThread implements Runnable {
 
         try {
             //сначала получить разрешение
-            System.out.println("Поток " + name + " ождает разрешение");
+            System.out.println("Поток " + name + " ожидает разрешение");
             sem.acquire();
 
             System.out.println("Поток " + name + " получает разрешение");
