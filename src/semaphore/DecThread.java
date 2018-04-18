@@ -34,7 +34,7 @@ public class DecThread implements Runnable{
                 System.out.println(name + " : " + Shared.count);
             }
 
-            //разрешить, если возможо, переключение контекста
+            //разрешить, если возможно, переключение контекста
             Thread.sleep(10);
         } catch (InterruptedException exc) {
             System.out.println(exc.toString());
