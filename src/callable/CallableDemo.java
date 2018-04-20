@@ -1,9 +1,6 @@
 package callable;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class CallableDemo {
 
@@ -21,13 +18,14 @@ public class CallableDemo {
         f3 = es.submit(new Factorial(5));
 
         try {
-            System.out.println(f1.get());
-            System.out.println(f2.get());
-            System.out.println(f3.get());
-
+            System.out.println(f1.get(10, TimeUnit.MILLISECONDS));
+            System.out.println(f2.get(10, TimeUnit.MILLISECONDS));
+            System.out.println(f3.get(10, TimeUnit.MILLISECONDS));
         } catch (InterruptedException exc) {
             System.out.println(exc.getMessage());
         } catch (ExecutionException exc) {
+            System.out.println(exc.getMessage());
+        } catch (TimeoutException exc) {
             System.out.println(exc.getMessage());
         }
 

@@ -13,6 +13,13 @@ public class Hypot implements Callable<Double> {
 
     @Override
     public Double call() {
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException exc) {
+            System.out.println(exc.getMessage());
+        }
+
         return Math.sqrt((side1*side1) + (side2*side2));
     }
 
