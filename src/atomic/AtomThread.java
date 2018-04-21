@@ -1,6 +1,6 @@
 package atomic;
 
-//Поток исполнения, в котором инкременируется значение счетчика
+//Поток исполнения, в котором инкрементируется значение счетчика
 public class AtomThread implements Runnable {
 
     private String name;

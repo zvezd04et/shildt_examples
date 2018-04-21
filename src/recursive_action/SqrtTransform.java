@@ -14,7 +14,7 @@ public class SqrtTransform extends RecursiveAction{
     //профилирования исполняющей системы или экспериментально
     private final int seqTheshold = 1000;
 
-    //обрабатываемые массив
+    //обрабатываемый массив
     private double[] data;
 
     //определить часть обрабатываемых данных
